@@ -192,21 +192,54 @@ footer { text-align: center; padding: 2rem; color: #777; }
     margin-bottom: 1.5rem;
 }
 
+/* --- GANTI KODE TADI DENGAN INI --- */
+
 .hero-btns {
     display: flex;
+     align-items: center;
+    justify-content: flex-start;
     gap: 15px;
     margin-top: 2.5rem;
 }
 
-/* Tombol Putih Transparan di Hero */
-.btn-outline-white {
-    display: inline-block;
-    padding: 1rem 2.5rem;
-    border: 2px solid white;
-    color: white;
+/* Base style untuk semua tombol di Hero agar ukurannya SAMA */
+.btn, .btn-outline-white {
+     margin: 0;
+    display: flex;            /* Menggunakan flex agar teks di tengah */
+    align-items: center;      /* Rata tengah vertikal */
+    justify-content: center;   /* Rata tengah horizontal */
+    
+    /* Tentukan ukuran tetap di sini */
+    width: 180px;             /* Lebar tombol */
+    height: 55px;             /* Tinggi tombol */
+    
     text-decoration: none;
     border-radius: 50px;
+    font-weight: 700;
     transition: 0.3s;
+    font-size: 0.95rem;
+    
+    /* Penting: Agar border tidak menambah ukuran luar tombol */
+    box-sizing: border-box; 
+}
+
+/* Warna Tombol Biru (Kenali Saya) */
+.btn {
+    background: #007bff;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* Warna Tombol Outline (Kontak) */
+.btn-outline-white {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
 }
 
 .btn-outline-white:hover {
