@@ -38,3 +38,28 @@ window.addEventListener('load', () => {
         preloader.classList.add('preloader-hidden');
     }, 500);
 });
+const searchInput = document.getElementById('search-input');
+const searchBtn = document.getElementById('search-btn');
+
+// Fungsi saat melakukan pencarian
+const handleSearch = () => {
+    const query = searchInput.value.toLowerCase().trim();
+    if (query !== "") {
+        // Contoh interaksi sederhana
+        alert("Mencari: " + query);
+        
+        // Logika sederhana: Jika cari 'plts' arahkan ke portfolio
+        if (query.includes("plts") || query.includes("proyek")) {
+            window.location.href = "portofolio.html";
+        }
+    }
+};
+
+searchBtn.addEventListener('click', handleSearch);
+
+// Menjalankan pencarian saat menekan tombol Enter
+searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        handleSearch();
+    }
+});
